@@ -13,10 +13,20 @@
                 alert("El campo nombre es requerido");
                 document.valida_datos_get_frm.nombre_txt.focus();
                 verificar = false;
+            }else if (!document.valida_datos_get_frm.password_txt.value){
+                alert("El campo Password es requerido");
+                document.valida_datos_get_frm.password_txt.focus();
+                verificar = false;
+            }else if (!document.valida_datos_get_frm.sexo_rdo[0].checked || document.valida_datos_get_frm.sexo_rdo[1].checked) {
+                alert("El campo sexo es requerido");
+                document.valida_datos_get_frm.sexo_rdo[0].focus();
+                verificar =  false;
             }
         }
 
-
+        window.onload = function(){
+            document.getElementById("enviar-get").onclick = validarDatosGET;
+        }
     </script>
 </head>
 <body>
@@ -28,13 +38,11 @@
     Inngresa tu Password:
     <input type="password" name="password_txt">
     <br><br>
-    <input type="radio" name="sexo_rdo" value="M">
-    Masculino&nbsp;
-    <input type="radio" name="sexo_rdo" value="F">
-    Femenino&nbsp;
+    <input type="radio" name="sexo_rdo" value="M">Masculino&nbsp;
+    <input type="radio" name="sexo_rdo" value="F">Femenino&nbsp;
     <br><br>
     <input type="hidden" name="enviar_hdn" value="get">
-    <input id="enviar-get" type="button" name="Enviar_btn" value="Enviar x GET" onclick="validarDatosGET();">
+    <input id="enviar-get" type="button" name="Enviar_btn" value="Enviar x GET" >
 
 
 
