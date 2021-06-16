@@ -50,11 +50,17 @@
 
         window.onload = function(){
             document.getElementById("enviar-get").onclick = validarDatosGET;
-           document.getElementById("enviar-post").onclick = validarDatosPOST;
+            document.getElementById("enviar-post").onclick = validarDatosPOST;
         }
     </script>
 </head>
 <body>
+    <?php
+        error_reporting(E_ALL ^ E_NOTICE ^ E_WARNING);
+        if($_GET["error"]=="si"){
+            echo "<span style=\"color:#F00; font-size:2em;\">VERIFICA TUS DATOS</span>";
+        }
+    ?>
     <hgroup><h1>Formulario de Datos GET</h1></hgroup>
     <form action="validar-datos.php" name="valida_datos_get_frm" method="get" enctype="application/x-www-form-urlencoded">
     Ingresa tu Nombre:
