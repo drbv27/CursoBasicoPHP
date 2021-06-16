@@ -8,5 +8,11 @@
         } else {
             header("Location: formulario.php?error=si");
         }
+    } else if(isset($_POST["enviar_hdn"])){
+        if($nombre==$_POST["nombre_txt"] && $password==$_POST["password_txt"]){
+            echo "El nombre que ingresaste por POST es ".$_POST["nombre_txt"].".<br>El Password que ingresaste por POST es ".$_POST["password_txt"]." .<br>El sexo que seleccionaste es ".$_POST["sexo_rdo"].".";
+        } else {
+            header("Location: formulario.php?error=si");
+        }
     }
 ?>
